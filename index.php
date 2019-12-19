@@ -26,17 +26,20 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-    $host = "tcp:fauzanwebserver.database.windows.net,1433";
+   /* $host = "tcp:fauzanwebserver.database.windows.net,1433";
     $user = "fauzanweb";
     $pass = "SepatuEiger42";
-    $db = "fauzanweb";
+    $db = "fauzanweb"; */
 
     try {
-        $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
-        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    } catch(Exception $e) {
-        echo "Failed: " . $e;
-    }
+    $conn = new PDO("sqlsrv:server = tcp:fauzanwebserver.database.windows.net,1433; Database = fauzanweb", "fauzanweb", "SepatuEiger42");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}
+
 
     if (isset($_POST['submit'])) {
         try {
