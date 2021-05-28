@@ -2,8 +2,8 @@
  // DB connection info
   $host = "tcp:fauzanwebserver.database.windows.net,1433";
     $user = "fauzanweb";
-    $pwd = "SepatuEiger42";
-    $db = "fauzanweb";
+    $pwd = "";
+    $db = "";
 
  try{
  	$conn = new PDO( "sqlsrv:Server= $host ; Database = $db ", $user, $pwd);
