@@ -28,11 +28,11 @@
  <?php
    /* $host = "tcp:fauzanwebserver.database.windows.net,1433";
     $user = "fauzanweb";
-    $pass = "SepatuEiger42";
+    $pass = "";
     $db = "fauzanweb"; */
 
     try {
-    $conn = new PDO("sqlsrv:server = tcp:fauzanwebserver.database.windows.net,1433; Database = fauzanweb", "fauzanweb", "SepatuEiger42");
+    $conn = new PDO("sqlsrv:server = tcp:fauzanwebserver.database.windows.net,1433; Database = fauzanweb", "fauzanweb", "");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $e) {
